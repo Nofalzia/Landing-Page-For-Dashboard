@@ -180,7 +180,9 @@ export default function Hero() {
           <div className="hero-copy reveal reveal-delay-1">
             <div className="eyebrow">Retail Analytics</div>
             <h1 className="headline-hero reveal reveal-delay-2">
-              See retail risk before it affects revenue.
+              See retail risks<br className="hero-br" />
+              {' '}before it affects<br className="hero-br" />
+              {' '}revenue.
             </h1>
             <p className="hero-subtitle reveal reveal-delay-3">
               Track your sales, stock, and performance without the friction of spreadsheets or guesswork.
@@ -240,9 +242,12 @@ export default function Hero() {
                 </div>
 
                 <div className="product-list">
-                  <div><span>Basmati Rice</span><b>72%</b></div>
-                  <div><span>Cooking Oil</span><b>54%</b></div>
-                  <div><span>Detergent</span><b>38%</b></div>
+                  {[{name:'Basmati Rice',pct:72},{name:'Cooking Oil',pct:54},{name:'Detergent',pct:38}].map(({name,pct})=>(
+                    <div key={name} className="product-row">
+                      <div className="product-row-top"><span>{name}</span><b>{pct}%</b></div>
+                      <div className="product-bar-track"><div className="product-bar-fill" style={{width:`${pct}%`}} /></div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="alert-row">
@@ -263,18 +268,17 @@ export default function Hero() {
           position: relative;
           overflow: hidden;
           display: grid;
-          grid-template-columns: minmax(0, 1.05fr) minmax(320px, 560px);
+          grid-template-columns: minmax(0, 1.2fr) minmax(280px, 500px);
           gap: clamp(1.5rem, 4vw, 4rem);
           align-items: center;
           min-height: 600px;
         }
 
-        .headline-break {
-          display: none;
-        }
+        /* Explicit 3-line break: shown on desktop, hidden on mobile */
+        .hero-br { display: none; }
 
         .hero-copy {
-          max-width: 560px;
+          max-width: 600px;
         }
 
         .hero-subtitle {
@@ -485,21 +489,37 @@ export default function Hero() {
         .product-list {
           display: flex;
           flex-direction: column;
-          gap: 0.45rem;
+          gap: 0.4rem;
         }
 
-        .product-list div {
+        .product-row { display: flex; flex-direction: column; gap: 0.15rem; }
+
+        .product-row-top {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          gap: 0.5rem;
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           color: var(--text);
         }
 
-        .product-list b {
-          font-size: 0.66rem;
+        .product-row-top b {
+          font-size: 0.62rem;
           color: var(--muted);
+          font-weight: 600;
+        }
+
+        .product-bar-track {
+          height: 2.5px;
+          background: rgba(23,25,27,0.08);
+          border-radius: 100px;
+          overflow: hidden;
+        }
+
+        .product-bar-fill {
+          height: 100%;
+          background: var(--green);
+          border-radius: 100px;
+          opacity: 0.55;
         }
 
         .alert-row {
@@ -527,6 +547,13 @@ export default function Hero() {
           font-weight: 700;
           letter-spacing: 0.04em;
           text-transform: uppercase;
+        }
+
+        /* ── Desktop overrides (> 940px two-column layout) ── */
+        @media (min-width: 941px) {
+          .hero-br { display: block; }
+          .headline-hero { max-width: none; }
+          .hero-copy .eyebrow { margin-left: 0; text-align: left; }
         }
 
         @media (max-width: 940px) {
@@ -575,10 +602,6 @@ export default function Hero() {
             margin: 0 auto 0.7rem;
           }
 
-          .headline-break {
-            display: block;
-          }
-
           .headline-hero {
             max-width: 12ch;
             margin: 0 auto 0.7rem;
@@ -594,6 +617,8 @@ export default function Hero() {
             border-radius: 22px;
             min-height: 0;
             display: block;
+            background: #e8e9e4;
+            border: 1px solid rgba(23,25,27,0.08);
           }
 
           .hero-copy {
@@ -637,8 +662,9 @@ export default function Hero() {
             width: 100%;
             margin-bottom: 1rem;
             overflow: hidden;
-            mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+            /* No left-fade on mobile — pills clip cleanly at the edge */
+            mask-image: linear-gradient(90deg, #000 0%, #000 88%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 88%, transparent 100%);
           }
 
           .hero-pills-track {

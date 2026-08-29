@@ -86,7 +86,7 @@ body {
   font-weight: 800;
   color: var(--text);
   text-transform: none;
-  max-width: 11ch;
+  max-width: none;
 }
 
 /* H2 — stronger, more structured but less generic */
