@@ -39,32 +39,33 @@ export default function AnomalySection() {
             <div className="reveal" style={{ fontSize:'0.6875rem', fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'#7C9473', marginBottom:'1rem' }}>
               Anomaly Detection
             </div>
-            <h2 className="reveal reveal-delay-1" style={{ fontFamily:'"Instrument Serif",serif', fontSize:'clamp(1.875rem,8vw,2.5rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1rem' }}>
+            <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Arial Black', 'Segoe UI', sans-serif", fontSize:'clamp(1.875rem,8vw,2.5rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1rem' }}>
               Spot what deserves your attention.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize:'0.9375rem', color:'rgba(255,255,255,0.65)', lineHeight:1.7 }}>
-              Rule-based checks flag unusual patterns automatically.
-              No manual scanning. Transparent, interpretable logic.
+              Flag unusual changes automatically so teams can act early.
+              No manual checking. Clear, explainable alerts when something deserves attention.
             </p>
           </div>
 
           {/* Alert cards — stacked */}
-          <div className="reveal reveal-delay-2" style={{ display:'flex', flexDirection:'column', gap:'10px', marginBottom:'1.5rem' }}>
+          <div className="reveal reveal-delay-2" style={{ display:'flex', flexDirection:'column', gap:'10px', marginBottom:'1.5rem', padding:'0 0.25rem' }}>
             {ALERTS.map(a => (
               <div key={a.product} style={{
                 display:'flex', alignItems:'center', gap:'14px',
-                background:'rgba(255,255,255,0.07)',
+                background:'rgba(255,255,255,0.10)',
                 borderRadius:'14px', padding:'16px',
-                border:`1px solid ${a.severity==='high'?'rgba(190,106,75,0.4)':'rgba(255,255,255,0.12)'}`,
+                border:`1px solid ${a.severity==='high'?'rgba(190,106,75,0.45)':'rgba(255,255,255,0.16)'}`,
+                boxShadow:'inset 0 1px 0 rgba(255,255,255,0.06)'
               }}>
                 <div style={{ width:'9px', height:'9px', borderRadius:'50%', flexShrink:0, background:a.severity==='high'?'#BE6A4B':'#B8863B', animation:'pulseSoft 2.5s ease-in-out infinite' }}/>
                 <div style={{ flex:1, minWidth:0 }}>
-                  <div style={{ fontSize:'0.9375rem', fontWeight:700, color:'#fff', marginBottom:'2px' }}>{a.product}</div>
-                  <div style={{ fontSize:'0.75rem', color:'rgba(255,255,255,0.5)' }}>{a.period}</div>
+                  <div style={{ fontSize:'0.9375rem', fontWeight:700, color:'#F5F8F2', marginBottom:'2px' }}>{a.product}</div>
+                  <div style={{ fontSize:'0.75rem', color:'rgba(245,248,242,0.82)' }}>{a.period}</div>
                 </div>
                 <div style={{ textAlign:'right', flexShrink:0 }}>
-                  <div style={{ fontSize:'1.125rem', fontWeight:800, color:a.severity==='high'?'#BE6A4B':'#B8863B' }}>{a.change}</div>
-                  <div style={{ fontSize:'0.6875rem', fontWeight:600, color:a.severity==='high'?'#BE6A4B':'#B8863B', background:a.severity==='high'?'rgba(190,106,75,0.15)':'rgba(184,134,59,0.15)', padding:'2px 8px', borderRadius:'100px', marginTop:'3px' }}>{a.label}</div>
+                  <div style={{ fontSize:'1.125rem', fontWeight:800, color:a.severity==='high'?'#F4C3AD':'#F3D8A8' }}>{a.change}</div>
+                  <div style={{ fontSize:'0.6875rem', fontWeight:600, color:a.severity==='high'?'#F4C3AD':'#F3D8A8', background:a.severity==='high'?'rgba(190,106,75,0.18)':'rgba(184,134,59,0.18)', padding:'2px 8px', borderRadius:'100px', marginTop:'3px' }}>{a.label}</div>
                 </div>
               </div>
             ))}
@@ -121,12 +122,12 @@ function AnomalyCopy({ alerts }) {
   return (
     <div>
       <div className="reveal" style={{ fontSize:'0.6875rem', fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'#7C9473', marginBottom:'1.25rem' }}>Anomaly Detection</div>
-      <h2 className="reveal reveal-delay-1" style={{ fontFamily:'"Instrument Serif",serif', fontSize:'clamp(2rem,3.5vw,3rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1.25rem' }}>
+      <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Arial Black', 'Segoe UI', sans-serif", fontSize:'clamp(2rem,3.5vw,3rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1.25rem' }}>
         Spot what deserves<br/>your attention.
       </h2>
       <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'rgba(255,255,255,0.65)', lineHeight:1.7, marginBottom:'2rem', maxWidth:'400px' }}>
-        No manager has time to manually scan every chart every day.
-        Rule-based statistical checks flag unusual patterns automatically.
+        No manager has time to catch every issue by hand.
+        The dashboard highlights unusual changes early so teams can act before they become bigger problems.
       </p>
       <div className="reveal reveal-delay-3" style={{ display:'flex', flexDirection:'column', gap:'10px', marginBottom:'2rem' }}>
         {alerts.map(a => (
@@ -144,7 +145,7 @@ function AnomalyCopy({ alerts }) {
         ))}
       </div>
       <div className="reveal reveal-delay-4" style={{ fontSize:'0.75rem', color:'rgba(255,255,255,0.35)', borderTop:'1px solid rgba(255,255,255,0.1)', paddingTop:'1rem' }}>
-        Uses threshold checks and percentage deviation against rolling averages. No machine learning. Transparent, interpretable logic.
+        Business-critical alerts that surface changes early, without needing deep technical knowledge to understand them.
       </div>
     </div>
   )

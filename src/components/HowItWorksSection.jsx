@@ -11,21 +11,20 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="section" style={{ background: 'var(--hero-surface)' }}>
       <div className="container">
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="hiw-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }} className="hiw-grid">
 
           {/* Left */}
           <div>
             <div className="eyebrow reveal" style={{ marginBottom: '1rem' }}>How It Works</div>
             <h2 className="headline-section reveal reveal-delay-1" style={{ marginBottom: '1.25rem' }}>
-              From raw data<br/>to clear decisions.
+              From spreadsheet to action in five steps.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize: '1rem', color: 'var(--muted)', lineHeight: 1.65, marginBottom: '2rem' }}>
-              Five steps. No technical knowledge needed.
-              Your existing spreadsheets are all it takes to get started.
+              Upload what you already use, turn it into a clear view of performance, and act before small issues become margin problems.
             </p>
             <div className="reveal reveal-delay-3">
               <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Try it now →
+                View the dashboard →
               </a>
             </div>
           </div>
@@ -63,19 +62,19 @@ export default function HowItWorksSection() {
         </div>
 
         {/* ── MOBILE: horizontal swipeable step cards ──────── */}
-        <div className="hiw-mobile">
+        <div className="hiw-mobile" style={{ padding: '0 0.25rem' }}>
           <div className="eyebrow reveal" style={{ marginBottom: '1rem', textAlign: 'center' }}>How It Works</div>
           <h2 className="headline-section reveal reveal-delay-1" style={{ textAlign: 'center', marginBottom: '0.75rem' }}>
-            From raw data to clear decisions.
+            From spreadsheet to action in five steps.
           </h2>
           <p className="reveal reveal-delay-2" style={{ fontSize: '0.9375rem', color: 'var(--muted)', lineHeight: 1.65, marginBottom: '1.5rem', textAlign: 'center' }}>
-            Five steps. No technical knowledge needed.
+            Upload what you already have and turn it into a clearer view of performance.
           </p>
 
           {/* Swipeable cards */}
           <div
             className="scroll-x reveal reveal-delay-2"
-            style={{ display: 'flex', gap: '12px', paddingBottom: '8px', marginLeft: '-1rem', marginRight: '-1rem', paddingLeft: '1rem', paddingRight: '1rem' }}
+            style={{ display: 'flex', gap: '12px', paddingBottom: '8px', marginLeft: '-0.5rem', marginRight: '-0.5rem', paddingLeft: '0.5rem', paddingRight: '0.5rem' }}
           >
             {STEPS.map((step, i) => (
               <div
@@ -98,9 +97,9 @@ export default function HowItWorksSection() {
                 }}>
                   {step.icon}
                 </div>
-                <span style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.06em', color: i === 0 ? 'rgba(255,255,255,0.5)' : 'var(--muted)', display: 'block', marginBottom: '4px' }}>{step.n}</span>
+                <span style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.06em', color: i === 0 ? 'rgba(255,255,255,0.78)' : 'rgba(23,25,27,0.65)', display: 'block', marginBottom: '4px' }}>{step.n}</span>
                 <div style={{ fontSize: '1rem', fontWeight: 700, color: i === 0 ? '#fff' : 'var(--text)', marginBottom: '8px' }}>{step.title}</div>
-                <div style={{ fontSize: '0.8125rem', color: i === 0 ? 'rgba(255,255,255,0.65)' : 'var(--muted)', lineHeight: 1.6 }}>{step.body}</div>
+                <div style={{ fontSize: '0.8125rem', color: i === 0 ? 'rgba(255,255,255,0.82)' : 'rgba(23,25,27,0.72)', lineHeight: 1.6 }}>{step.body}</div>
               </div>
             ))}
           </div>
@@ -113,7 +112,7 @@ export default function HowItWorksSection() {
 
           <div style={{ textAlign: 'center', marginTop: '1.75rem' }}>
             <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center' }}>
-              Try it now →
+              View the dashboard →
             </a>
           </div>
         </div>

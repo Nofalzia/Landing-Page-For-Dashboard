@@ -22,22 +22,21 @@ export default function FinalCTA() {
           {/* Floating badges — desktop only */}
           <div aria-hidden="true" className="cta-badges-top" style={{ position:'absolute', top:'2rem', left:'2rem', display:'flex', gap:'6px' }}>
             {['Rs. 2.84M','+12.4%'].map(v=>(
-              <span key={v} style={{ fontSize:'0.6875rem', fontWeight:600, background:'rgba(30,54,45,0.08)', color:'var(--green)', padding:'4px 10px', borderRadius:'100px', border:'1px solid rgba(30,54,45,0.15)' }}>{v}</span>
+              <span key={v} style={{ fontSize:'0.6875rem', fontWeight:600, background:'var(--green-light)', color:'var(--green)', padding:'4px 10px', borderRadius:'100px', border:'1px solid var(--border)' }}>{v}</span>
             ))}
           </div>
-          <div aria-hidden="true" className="cta-badges-top" style={{ position:'absolute', top:'2rem', right:'2rem', background:'rgba(190,106,75,0.1)', border:'1px solid rgba(190,106,75,0.25)', borderRadius:'100px', padding:'4px 12px', display:'flex', alignItems:'center', gap:'6px' }}>
-            <div style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#BE6A4B' }}/>
-            <span style={{ fontSize:'0.6875rem', fontWeight:600, color:'#BE6A4B' }}>7 anomalies detected</span>
+          <div aria-hidden="true" className="cta-badges-top" style={{ position:'absolute', top:'2rem', right:'2rem', background:'var(--accent-soft)', border:'1px solid var(--border)', borderRadius:'100px', padding:'4px 12px', display:'flex', alignItems:'center', gap:'6px' }}>
+            <div style={{ width:'6px', height:'6px', borderRadius:'50%', background:'var(--terra)' }}/>
+            <span style={{ fontSize:'0.6875rem', fontWeight:600, color:'var(--terra)' }}>7 anomalies detected</span>
           </div>
 
           <div style={{ position:'relative', zIndex:1, maxWidth:'580px', margin:'0 auto' }}>
             <div className="eyebrow reveal" style={{ marginBottom:'1.25rem' }}>Get Started</div>
-            <h2 className="reveal reveal-delay-1" style={{ fontFamily:'"Instrument Serif",serif', fontSize:'clamp(2rem,5vw,3.5rem)', lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--text)', marginBottom:'1.25rem' }}>
-              Turn scattered retail data into something you can act on.
+            <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Arial Black', 'Segoe UI', sans-serif", fontSize:'clamp(2rem,5vw,3.5rem)', lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--text)', marginBottom:'1.25rem' }}>
+              Stop reacting too late to retail problems.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'var(--muted)', lineHeight:1.65, marginBottom:'2.5rem' }}>
-              Explore the live dashboard with demo data, or bring your own CSV
-              and Excel files to see how your retail numbers look when properly organized.
+              Explore the live dashboard with demo data, or upload your own CSV and Excel files to see how much clearer your decisions become.
             </p>
             <div className="reveal reveal-delay-3 cta-group" style={{ display:'flex', gap:'12px', justifyContent:'center', flexWrap:'wrap' }}>
               <a href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize:'0.9375rem', padding:'0.875rem 2rem' }}>

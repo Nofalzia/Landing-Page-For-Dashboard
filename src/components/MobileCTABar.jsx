@@ -44,7 +44,7 @@ export default function MobileCTABar() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: 1, minWidth: 0 }}>
           <div style={{
             width: '8px', height: '8px', borderRadius: '50%', flexShrink: 0,
-            background: '#1E362D',
+            background: 'var(--green)',
             animation: 'pulseSoft 2.5s ease-in-out infinite',
           }} />
           <div>

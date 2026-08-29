@@ -12,8 +12,8 @@ const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app'
 function StarLogo() {
   return (
     <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="#1E362D"/>
-      <path d="M16 5 L17.6 13.4 L26 16 L17.6 18.6 L16 27 L14.4 18.6 L6 16 L14.4 13.4 Z" fill="#7C9473"/>
+      <rect width="32" height="32" rx="8" fill="var(--green)"/>
+      <path d="M16 5 L17.6 13.4 L26 16 L17.6 18.6 L16 27 L14.4 18.6 L6 16 L14.4 13.4 Z" fill="var(--sage)"/>
     </svg>
   )
 }

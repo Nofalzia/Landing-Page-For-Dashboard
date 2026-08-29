@@ -150,7 +150,7 @@ function UseCasePanel({ uc }) {
       <div style={{ padding: '1.5rem 1.5rem 0' }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '8px' }}>
           <div>
-            <h3 style={{ fontFamily: '"Instrument Serif", serif', fontSize: 'clamp(1.35rem, 4vw, 1.625rem)', letterSpacing: '-0.01em', margin: '0 0 3px', color: 'var(--text)' }}>
+            <h3 style={{ fontFamily: "'Arial Black', 'Segoe UI', sans-serif", fontSize: 'clamp(1.35rem, 4vw, 1.625rem)', letterSpacing: '-0.01em', margin: '0 0 3px', color: 'var(--text)' }}>
               {uc.retailer}
             </h3>
             <div style={{ fontSize: '0.8125rem', color: 'var(--muted)' }}>{uc.type} · {uc.location}</div>

@@ -56,13 +56,13 @@ function DesktopMockup() {
   const { line, area } = miniPath(TREND, 240, 72)
   return (
     <div style={{
-      background: '#FAF7F1', borderRadius: '16px', overflow: 'hidden',
-      border: '1px solid rgba(0,0,0,0.08)',
-      boxShadow: '0 20px 60px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.08)',
+      background: 'var(--white)', borderRadius: '16px', overflow: 'hidden',
+      border: '1px solid var(--border)',
+      boxShadow: 'var(--shadow-float)',
       display: 'flex', width: '100%', maxWidth: '430px',
     }}>
       {/* Sidebar */}
-      <div style={{ width: '42px', background: '#1E362D', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '14px 0', gap: '8px', flexShrink: 0 }}>
+      <div style={{ width: '42px', background: 'var(--green)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '14px 0', gap: '8px', flexShrink: 0 }}>
         <div style={{ width: '22px', height: '22px', background: 'rgba(255,255,255,0.15)', borderRadius: '6px', marginBottom: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1 L6.2 4.8 L10 5 L6.2 5.2 L5 9 L3.8 5.2 L0 5 L3.8 4.8 Z" fill="#7C9473"/></svg>
         </div>
@@ -76,10 +76,10 @@ function DesktopMockup() {
       <div style={{ flex: 1, padding: '13px', minWidth: 0 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '11px' }}>
           <div>
-            <div style={{ fontSize: '8px', color: '#71717A', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '2px' }}>Retail Analytics</div>
-            <div style={{ fontSize: '11px', fontWeight: 700, color: '#18181B', fontFamily: "'Montserrat',sans-serif" }}>Overview</div>
+            <div style={{ fontSize: '8px', color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '2px' }}>Retail Analytics</div>
+            <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text)', fontFamily: "'Montserrat',sans-serif" }}>Overview</div>
           </div>
-          <div style={{ fontSize: '8px', fontWeight: 600, background: 'rgba(30,54,45,0.1)', color: '#1E362D', padding: '3px 7px', borderRadius: '100px' }}>Business Owner</div>
+          <div style={{ fontSize: '8px', fontWeight: 600, background: 'var(--green-light)', color: 'var(--green)', padding: '3px 7px', borderRadius: '100px' }}>Business Owner</div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '5px', marginBottom: '9px' }}>
           {[
@@ -87,15 +87,15 @@ function DesktopMockup() {
             { label:'Units Sold', value:'4,812',     change:'+8.2%',  dark:false },
             { label:'Anomalies',  value:'7',          change:'flagged',dark:true  },
           ].map(({ label, value, change, dark }) => (
-            <div key={label} style={{ background: dark?'#1E362D':'#fff', borderRadius: '7px', padding: '7px', border: dark?'none':'1px solid rgba(0,0,0,0.07)' }}>
-              <div style={{ fontSize: '7px', color: dark?'rgba(255,255,255,0.6)':'#71717A', marginBottom: '3px' }}>{label}</div>
-              <div style={{ fontSize: '10px', fontWeight: 800, color: dark?'#fff':'#18181B', lineHeight: 1.2, marginBottom: '2px', fontFamily:"'Montserrat',sans-serif" }}>{value}</div>
-              <div style={{ fontSize: '7px', fontWeight: 600, color: dark?'rgba(255,255,255,0.5)':label==='Anomalies'?'#BE6A4B':'#16a34a' }}>{change}</div>
+            <div key={label} style={{ background: dark?'var(--green)':'var(--white)', borderRadius: '7px', padding: '7px', border: dark?'none':'1px solid var(--border)' }}>
+              <div style={{ fontSize: '7px', color: dark?'rgba(255,255,255,0.6)':'var(--muted)', marginBottom: '3px' }}>{label}</div>
+              <div style={{ fontSize: '10px', fontWeight: 800, color: dark?'#fff':'var(--text)', lineHeight: 1.2, marginBottom: '2px', fontFamily:"'Montserrat',sans-serif" }}>{value}</div>
+              <div style={{ fontSize: '7px', fontWeight: 600, color: dark?'rgba(255,255,255,0.5)':label==='Anomalies'?'var(--terra)':'#3f7b77' }}>{change}</div>
             </div>
           ))}
         </div>
-        <div style={{ background: '#fff', borderRadius: '7px', border: '1px solid rgba(0,0,0,0.07)', padding: '9px', marginBottom: '7px' }}>
-          <div style={{ fontSize: '7px', color: '#71717A', marginBottom: '5px', letterSpacing: '0.04em' }}>SALES TREND — LAST 30 DAYS</div>
+        <div style={{ background: 'var(--white)', borderRadius: '7px', border: '1px solid var(--border)', padding: '9px', marginBottom: '7px' }}>
+          <div style={{ fontSize: '7px', color: 'var(--muted)', marginBottom: '5px', letterSpacing: '0.04em' }}>SALES TREND — LAST 30 DAYS</div>
           <svg width="100%" viewBox="0 0 240 72" preserveAspectRatio="none" style={{ display: 'block', height: '44px' }}>
             <defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#7C9473" stopOpacity="0.25"/><stop offset="100%" stopColor="#7C9473" stopOpacity="0"/></linearGradient></defs>
             <polygon points={area} fill="url(#dg)"/>
@@ -174,110 +174,530 @@ function MobileStats() {
 /* ── Hero ────────────────────────────────────────────────── */
 export default function Hero() {
   return (
-    <section aria-label="Hero" style={{ paddingTop: '80px', paddingBottom: '3rem', background: 'var(--bg)' }}>
+    <section aria-label="Hero" style={{ paddingTop: '80px', paddingBottom: '2.5rem', background: 'var(--bg)' }}>
       <div className="container">
-        <div style={{
-          background: 'var(--hero-surface)',
-          borderRadius: '24px',
-          padding: 'clamp(1.75rem,5vw,4rem)',
-          position: 'relative', overflow: 'hidden',
-        }}>
-          {/* Decorative rings */}
-          {[320, 200].map(size => (
-            <div key={size} aria-hidden="true" style={{ position:'absolute', right:'-60px', top:'-60px', width:`${size}px`, height:`${size}px`, borderRadius:'50%', border:'1px solid rgba(30,54,45,0.07)', pointerEvents:'none' }} />
-          ))}
+        <div className="hero-shell reveal">
+          <div className="hero-copy reveal reveal-delay-1">
+            <div className="eyebrow">Retail Analytics</div>
+            <h1 className="headline-hero reveal reveal-delay-2">
+              See retail risk before it affects revenue.
+            </h1>
+            <p className="hero-subtitle reveal reveal-delay-3">
+              Track your sales, stock, and performance without the friction of spreadsheets or guesswork.
+            </p>
 
-          {/* ── DESKTOP ─────────────────────────────────── */}
-          <div className="hero-desktop-grid">
-            <div style={{ maxWidth: '520px' }}>
-              <div className="eyebrow reveal" style={{ marginBottom: '1.25rem' }}>Retail Intelligence</div>
-
-              {/* Clean headline — no inline icon */}
-              <h1 className="headline-hero reveal reveal-delay-1" style={{ marginBottom: '1.25rem' }}>
-                See what your retail data is telling you.
-              </h1>
-
-              <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'var(--muted)', lineHeight:1.65, marginBottom:'1.75rem', maxWidth:'420px' }}>
-                Bring your CSV and Excel data together. Visualize sales and inventory.
-                Automatically flag unusual patterns — no technical setup needed.
-              </p>
-
-              {/* Pills — SVG icon circles, no emojis */}
-              <div className="reveal reveal-delay-2" style={{ display:'flex', flexWrap:'wrap', gap:'7px', marginBottom:'2rem' }}>
-                {PILLS.map(({ text, icon }) => (
-                  <span key={text} style={{
-                    display:'inline-flex', alignItems:'center', gap:'7px',
-                    background:'rgba(255,255,255,0.75)', border:'1px solid var(--border)',
-                    padding:'6px 13px', borderRadius:'100px',
-                    fontSize:'0.8125rem', color:'var(--text)', fontWeight:600,
-                    fontFamily:"'Montserrat',sans-serif",
-                  }}>
-                    <span style={{
-                      display:'inline-flex', alignItems:'center', justifyContent:'center',
-                      width:'18px', height:'18px', borderRadius:'50%',
-                      background:'var(--green)', flexShrink:0,
-                    }}>
-                      {icon}
-                    </span>
+            <div className="hero-pills reveal reveal-delay-3">
+              <div className="hero-pills-track">
+                {[...PILLS, ...PILLS].map(({ text, icon }, index) => (
+                  <span key={`${text}-${index}`} className="pill">
+                    <span className="pill-icon">{icon}</span>
                     {text}
                   </span>
                 ))}
               </div>
+            </div>
 
-              <div className="reveal reveal-delay-3 cta-group" style={{ display:'flex', gap:'0.75rem', flexWrap:'wrap' }}>
-                <a href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                  Explore Dashboard
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
-                <a href="#how-it-works" className="btn-secondary">See how it works</a>
+            <div className="cta-group reveal reveal-delay-4">
+              <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">See the dashboard</a>
+              <a href="#use-cases" className="btn-secondary">View use cases</a>
+            </div>
+          </div>
+
+          <div className="hero-visual reveal reveal-delay-2" aria-label="Retail analytics dashboard preview">
+            <div className="stacked-cards">
+              <div className="dashboard-card dashboard-card-back" />
+              <div className="dashboard-card dashboard-card-mid" />
+              <div className="dashboard-card dashboard-card-front">
+                <div className="dashboard-topbar">
+                  <span>Retail Analytics</span>
+                  <span className="badge-soft">Owner View</span>
+                </div>
+
+                <div className="mini-stats">
+                  <div className="mini-stat accent">
+                    <small>Revenue</small>
+                    <strong>Rs. 2.84M</strong>
+                    <em>+12.4%</em>
+                  </div>
+                  <div className="mini-stat">
+                    <small>Units</small>
+                    <strong>4,812</strong>
+                    <em>+8.2%</em>
+                  </div>
+                  <div className="mini-stat dark">
+                    <small>Anomalies</small>
+                    <strong>7</strong>
+                    <em>flags</em>
+                  </div>
+                </div>
+
+                <div className="chart-panel">
+                  <label>Sales trend · last 30 days</label>
+                  <svg viewBox="0 0 220 75" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0 60 C 25 48, 45 42, 65 38 S 120 20, 150 28 S 195 16, 220 10 L220 75 L0 75 Z" fill="rgba(95,122,129,0.18)"/>
+                    <path d="M0 60 C 25 48, 45 42, 65 38 S 120 20, 150 28 S 195 16, 220 10" fill="none" stroke="#5f7a81" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+
+                <div className="product-list">
+                  <div><span>Basmati Rice</span><b>72%</b></div>
+                  <div><span>Cooking Oil</span><b>54%</b></div>
+                  <div><span>Detergent</span><b>38%</b></div>
+                </div>
+
+                <div className="alert-row">
+                  <span className="alert-dot" />
+                  <small>7 unusual patterns detected</small>
+                </div>
               </div>
             </div>
-
-            <div className="reveal reveal-delay-2" aria-hidden="true" style={{ flexShrink:0, alignSelf:'center' }}>
-              <DesktopMockup />
-            </div>
           </div>
-
-          {/* ── MOBILE ──────────────────────────────────── */}
-          <div className="hero-mobile-only">
-            <div className="eyebrow reveal" style={{ marginBottom:'1rem', textAlign:'center' }}>Retail Intelligence</div>
-            <h1 className="headline-hero reveal reveal-delay-1" style={{ textAlign:'center', marginBottom:'1rem' }}>
-              See what your retail data is telling you.
-            </h1>
-            <p className="reveal reveal-delay-2" style={{ fontSize:'0.9375rem', color:'var(--muted)', lineHeight:1.65, marginBottom:'1.5rem', textAlign:'center' }}>
-              Upload CSV or Excel files. Get interactive dashboards, product trends, and automatic anomaly alerts.
-            </p>
-            <div className="reveal reveal-delay-3 cta-group" style={{ display:'flex', flexDirection:'column', gap:'0.75rem' }}>
-              <a href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent:'center' }}>
-                Explore Dashboard →
-              </a>
-              <a href="#use-cases" className="btn-secondary" style={{ justifyContent:'center' }}>See Use Cases</a>
-            </div>
-            <MobileStats />
-          </div>
-        </div>
-
-        {/* Tech strip */}
-        <div className="reveal reveal-delay-4" style={{ display:'flex', flexWrap:'wrap', gap:'6px', justifyContent:'center', alignItems:'center', marginTop:'1.5rem' }}>
-          <span style={{ fontSize:'0.75rem', color:'var(--muted)', marginRight:'4px', fontFamily:"'Montserrat',sans-serif", fontWeight:500 }}>Built with</span>
-          {['React 19','Node.js','Express','Chart.js','Tailwind CSS','SQL'].map(t=>(
-            <span key={t} style={{ fontSize:'0.75rem', fontWeight:600, fontFamily:"'Montserrat',sans-serif", color:'var(--muted)', background:'var(--white)', border:'1px solid var(--border)', padding:'3px 10px', borderRadius:'100px' }}>{t}</span>
-          ))}
         </div>
       </div>
 
       <style>{`
-        .hero-desktop-grid {
+        .hero-shell {
+          background: var(--hero-surface);
+          border-radius: 30px;
+          padding: clamp(1.4rem, 3vw, 2.5rem);
+          position: relative;
+          overflow: hidden;
           display: grid;
-          grid-template-columns: minmax(0,1fr) auto;
-          gap: 3rem;
+          grid-template-columns: minmax(0, 1.05fr) minmax(320px, 560px);
+          gap: clamp(1.5rem, 4vw, 4rem);
+          align-items: center;
+          min-height: 600px;
+        }
+
+        .headline-break {
+          display: none;
+        }
+
+        .hero-copy {
+          max-width: 560px;
+        }
+
+        .hero-subtitle {
+          font-size: 1.05rem;
+          line-height: 1.7;
+          color: var(--muted);
+          max-width: 520px;
+          margin: 1.1rem 0 1.5rem;
+        }
+
+        .hero-pills {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          overflow: hidden;
+          margin-bottom: 1.5rem;
+          position: relative;
+          padding: 0.15rem 0;
+          mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+          -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+        }
+
+        .hero-pills-track {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          min-width: max-content;
+          white-space: nowrap;
+          animation: pill-marquee 18s linear infinite;
+          will-change: transform;
+        }
+
+        .hero-pills:hover .hero-pills-track {
+          animation-play-state: paused;
+        }
+
+        @keyframes pill-marquee {
+          from { transform: translate3d(0, 0, 0); }
+          to   { transform: translate3d(-50%, 0, 0); }
+        }
+
+        .pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.55rem 0.85rem;
+          border-radius: 999px;
+          border: 1px solid var(--border);
+          background: rgba(255,255,255,0.18);
+          color: var(--text);
+          font-size: 0.76rem;
+          font-weight: 600;
+          flex-shrink: 0;
+          max-width: none;
+        }
+
+        .pill-icon {
+          width: 1.3rem;
+          height: 1.3rem;
+          border-radius: 50%;
+          background: var(--accent);
+          color: white;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .pill-icon svg {
+          width: 0.7rem;
+          height: 0.7rem;
+        }
+
+        .cta-group {
+          display: flex;
+          gap: 0.9rem;
+          flex-wrap: wrap;
+        }
+
+        .hero-visual {
+          display: flex;
+          justify-content: center;
           align-items: center;
         }
-        .hero-mobile-only { display: none; }
+
+        .stacked-cards {
+          position: relative;
+          width: min(100%, 420px);
+          height: 420px;
+        }
+
+        .dashboard-card {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 82%;
+          border-radius: 24px;
+          overflow: hidden;
+          border: 1px solid rgba(23,25,27,0.05);
+          box-shadow: var(--shadow-card);
+        }
+
+        .dashboard-card-back {
+          bottom: 24px;
+          height: 250px;
+          background: linear-gradient(135deg, #dfe3de 0%, #d4dbd7 100%);
+          transform: translateX(-50%) rotate(-10deg);
+        }
+
+        .dashboard-card-mid {
+          bottom: 12px;
+          height: 255px;
+          background: linear-gradient(135deg, #dfe0d7 0%, #cdd8d3 100%);
+          transform: translateX(-50%) rotate(9deg);
+        }
+
+        .dashboard-card-front {
+          bottom: 0;
+          height: 290px;
+          background: #f6f7f5;
+          transform: translateX(-50%) rotate(0deg);
+          padding: 0.9rem 0.9rem 0.8rem;
+        }
+
+        .dashboard-topbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--muted);
+          margin-bottom: 0.8rem;
+        }
+
+        .badge-soft {
+          background: var(--green-light);
+          color: var(--green);
+          border-radius: 999px;
+          padding: 0.25rem 0.5rem;
+          letter-spacing: 0.02em;
+          text-transform: none;
+          font-weight: 700;
+        }
+
+        .mini-stats {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 0.45rem;
+          margin-bottom: 0.7rem;
+        }
+
+        .mini-stat {
+          background: white;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 0.5rem 0.45rem;
+        }
+
+        .mini-stat.accent { background: rgba(95,122,129,0.08); }
+        .mini-stat.dark { background: var(--green); color: white; }
+
+        .mini-stat small {
+          display: block;
+          font-size: 0.56rem;
+          opacity: 0.76;
+          margin-bottom: 0.2rem;
+        }
+
+        .mini-stat strong {
+          display: block;
+          font-size: 0.82rem;
+          line-height: 1.1;
+          font-weight: 800;
+        }
+
+        .mini-stat em {
+          display: block;
+          margin-top: 0.2rem;
+          font-size: 0.55rem;
+          font-style: normal;
+          opacity: 0.8;
+        }
+
+        .chart-panel {
+          background: white;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 0.6rem 0.55rem 0.25rem;
+          margin-bottom: 0.7rem;
+        }
+
+        .chart-panel label {
+          display: block;
+          font-size: 0.56rem;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--muted);
+          margin-bottom: 0.35rem;
+        }
+
+        .chart-panel svg {
+          display: block;
+          width: 100%;
+          height: 72px;
+        }
+
+        .product-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.45rem;
+        }
+
+        .product-list div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.7rem;
+          color: var(--text);
+        }
+
+        .product-list b {
+          font-size: 0.66rem;
+          color: var(--muted);
+        }
+
+        .alert-row {
+          display: flex;
+          align-items: center;
+          gap: 0.45rem;
+          margin-top: 0.7rem;
+          border-radius: 10px;
+          background: rgba(95,122,129,0.06);
+          border: 1px solid rgba(95,122,129,0.12);
+          padding: 0.45rem 0.6rem;
+        }
+
+        .alert-dot {
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background: var(--green);
+          display: inline-block;
+        }
+
+        .alert-row small {
+          color: var(--green);
+          font-size: 0.62rem;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+
+        @media (max-width: 940px) {
+          .hero-shell {
+            grid-template-columns: 1fr;
+            min-height: 0;
+          }
+
+          .hero-copy {
+            max-width: none;
+            text-align: center;
+          }
+
+          .hero-subtitle,
+          .hero-pills,
+          .cta-group {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .hero-subtitle {
+            text-align: center;
+          }
+
+          .hero-pills {
+            justify-content: center;
+          }
+
+          .cta-group {
+            justify-content: center;
+          }
+        }
 
         @media (max-width: 720px) {
-          .hero-desktop-grid { display: none; }
-          .hero-mobile-only  { display: block; }
+          .hero-shell {
+            padding: 1rem 1rem 1.2rem;
+          }
+
+          .hero-copy {
+            max-width: 100%;
+          }
+
+          .eyebrow {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 0.7rem;
+          }
+
+          .headline-break {
+            display: block;
+          }
+
+          .headline-hero {
+            max-width: 12ch;
+            margin: 0 auto 0.7rem;
+            font-size: clamp(2.5rem, 9vw, 3.1rem);
+            line-height: 0.92;
+            letter-spacing: -0.05em;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-shell {
+            padding: 0.8rem 0.8rem 1rem;
+            border-radius: 22px;
+            min-height: 0;
+            display: block;
+          }
+
+          .hero-copy {
+            text-align: center;
+            max-width: 100%;
+          }
+
+          .hero-visual {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.9rem;
+          }
+
+          .eyebrow {
+            width: auto;
+            text-align: center;
+            margin-bottom: 0.5rem;
+          }
+
+          .headline-hero {
+            display: block;
+            text-align: center;
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto 0.7rem;
+            font-size: clamp(2.6rem, 12vw, 3.7rem);
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+          }
+
+          .hero-subtitle {
+            font-size: 0.94rem;
+            line-height: 1.55;
+            max-width: 22ch;
+            margin: 0 auto 1rem;
+          }
+
+          .hero-pills {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+          }
+
+          .hero-pills-track {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: max-content;
+            white-space: nowrap;
+            animation: pill-marquee 16s linear infinite;
+          }
+
+          .pill {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.7rem;
+            border-radius: 999px;
+          }
+
+          .pill-icon {
+            width: 1.1rem;
+            height: 1.1rem;
+          }
+
+          .cta-group {
+            flex-direction: column;
+            gap: 0.7rem;
+          }
+
+          .cta-group .btn-primary,
+          .cta-group .btn-secondary {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .stacked-cards {
+            width: min(100%, 315px);
+            height: 260px;
+            margin-top: 0.15rem;
+          }
+
+          .dashboard-card-front {
+            height: 210px;
+            border-radius: 18px;
+          }
+
+          .dashboard-card-back {
+            height: 180px;
+            bottom: 18px;
+          }
+
+          .dashboard-card-mid {
+            height: 185px;
+            bottom: 8px;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .headline-hero {
+            font-size: clamp(2.1rem, 8.8vw, 2.7rem);
+          }
         }
       `}</style>
     </section>

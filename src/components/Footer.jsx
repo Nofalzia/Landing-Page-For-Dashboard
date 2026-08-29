@@ -54,11 +54,11 @@ export default function Footer() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '6px',
                 fontSize: '0.8125rem', fontWeight: 600,
-                color: '#7C9473', textDecoration: 'none',
+                color: 'var(--sage)', textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = '#a0b89a'}
-              onMouseLeave={e => e.currentTarget.style.color = '#7C9473'}
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--accent-strong)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--sage)'}
             >
               retail-analytics-saas.vercel.app →
             </a>
@@ -147,9 +147,9 @@ export default function Footer() {
 function RALogo() {
   return (
     <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="#1E362D"/>
+      <rect width="32" height="32" rx="8" fill="var(--green)"/>
       <path d="M8 22V10h6a4 4 0 0 1 0 8h-2l4 4H13l-3.5-4H10v4H8z" fill="#fff"/>
-      <rect x="10" y="12" width="4" height="4" rx="1" fill="#7C9473"/>
+      <rect x="10" y="12" width="4" height="4" rx="1" fill="var(--sage)"/>
       <path d="M18 10h2l4 12h-2l-1-3h-4l-1 3h-2l4-12zm1 3-1.5 4h3L19 13z" fill="#fff"/>
     </svg>
   )

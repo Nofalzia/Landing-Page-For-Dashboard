@@ -2,33 +2,33 @@ import { useState } from 'react'
 
 const FEATURES = [
   {
-    n: '01', title: 'Sales Analytics',
-    body: 'Understand how revenue moves over time. Track daily, weekly, and monthly trends. Spot genuine growth vs. noise.',
+    n: '01', title: 'Sales visibility',
+    body: 'See daily, weekly, and monthly movement in one place. Understand what is driving growth and where performance is slipping.',
     visual: <SalesViz />,
   },
   {
-    n: '02', title: 'Product Performance',
-    body: 'See which products carry the most revenue and which are quietly underperforming. Compare categories. Focus where it counts.',
+    n: '02', title: 'Product performance',
+    body: 'Spot which products are earning the most and which are quietly dragging down profit. Focus attention on the lines that matter.',
     visual: <ProductViz />,
   },
   {
-    n: '03', title: 'Inventory Visibility',
-    body: 'Know what stock is on hand, what is moving fast, and what might run out. Sales and inventory in one place for the first time.',
+    n: '03', title: 'Inventory control',
+    body: 'Know what is on hand, what is moving quickly, and what is at risk of running out before it affects sales.',
     visual: <InventoryViz />,
   },
   {
-    n: '04', title: 'Anomaly Detection',
-    body: 'Rule-based statistical checks flag unusual patterns automatically. No manual scanning — the dashboard brings problems to you.',
+    n: '04', title: 'Smart anomaly alerts',
+    body: 'Flag unusual spikes, dips, and stock issues automatically so teams can react early instead of discovering problems too late.',
     visual: <AnomalyViz />,
   },
   {
-    n: '05', title: 'Role-Based Views',
-    body: 'Business owners see high-level KPIs. Store managers see operational detail. Each role gets the view that is actually useful.',
+    n: '05', title: 'Manager-ready views',
+    body: 'Give owners the big picture and store teams the detail they need. Everyone gets a view built for the decisions they actually make.',
     visual: <RolesViz />,
   },
   {
-    n: '06', title: 'CSV + Excel Import',
-    body: 'Upload your existing exports directly. No reformatting, no new tools, no IT department. Works with any standard retail data file.',
+    n: '06', title: 'CSV + Excel import',
+    body: 'Upload the files you already use. No reformatting, no new system, and no technical setup required to get started.',
     visual: <ImportViz />,
   },
 ]
