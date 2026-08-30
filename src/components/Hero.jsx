@@ -629,13 +629,11 @@ export default function Hero() {
           .hero-visual {
             display: flex;
             justify-content: center;
-            margin-top: 0.9rem;
+            margin-top: 0.6rem;
           }
 
           .eyebrow {
-            width: auto;
-            text-align: center;
-            margin-bottom: 0.5rem;
+            display: none;
           }
 
           .headline-hero {
@@ -643,28 +641,22 @@ export default function Hero() {
             text-align: center;
             max-width: 100%;
             width: 100%;
-            margin: 0 auto 0.7rem;
+            margin: 0 auto 0.6rem;
             font-size: clamp(2.6rem, 12vw, 3.7rem);
             line-height: 0.9;
             letter-spacing: -0.05em;
           }
 
           .hero-subtitle {
-            font-size: 0.94rem;
-            line-height: 1.55;
-            max-width: 22ch;
-            margin: 0 auto 1rem;
+            font-size: 0.93rem;
+            line-height: 1.5;
+            max-width: none;
+            width: 100%;
+            margin: 0 auto 0.9rem;
           }
 
           .hero-pills {
-            display: flex;
-            justify-content: flex-start;
-            width: 100%;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            /* No left-fade on mobile — pills clip cleanly at the edge */
-            mask-image: linear-gradient(90deg, #000 0%, #000 88%, transparent 100%);
-            -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 88%, transparent 100%);
+            display: none;
           }
 
           .hero-pills-track {
@@ -700,22 +692,22 @@ export default function Hero() {
 
           .stacked-cards {
             width: min(100%, 315px);
-            height: 260px;
+            height: 310px;
             margin-top: 0.15rem;
           }
 
           .dashboard-card-front {
-            height: 210px;
+            height: 260px;
             border-radius: 18px;
           }
 
           .dashboard-card-back {
-            height: 180px;
+            height: 220px;
             bottom: 18px;
           }
 
           .dashboard-card-mid {
-            height: 185px;
+            height: 228px;
             bottom: 8px;
           }
         }
