@@ -180,12 +180,12 @@ export default function Hero() {
           <div className="hero-copy reveal reveal-delay-1">
             <div className="eyebrow">Retail Analytics</div>
             <h1 className="headline-hero reveal reveal-delay-2">
-              See retail risks<br className="hero-br" />
+              <br /><br />See retail risks<br className="hero-br" />
               {' '}before it affects<br className="hero-br" />
               {' '}revenue.
             </h1>
             <p className="hero-subtitle reveal reveal-delay-3">
-              Track your sales, stock, and performance without the friction of spreadsheets or guesswork.
+              <br />Track your sales, stock, and performance without the friction of spreadsheets or guesswork.<br />
             </p>
 
             <div className="hero-pills reveal reveal-delay-3">
