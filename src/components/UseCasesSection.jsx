@@ -150,7 +150,7 @@ function UseCasePanel({ uc }) {
       <div style={{ padding: '1.5rem 1.5rem 0' }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '8px' }}>
           <div>
-            <h3 style={{ fontFamily: "'Arial Black', 'Segoe UI', sans-serif", fontSize: 'clamp(1.35rem, 4vw, 1.625rem)', letterSpacing: '-0.01em', margin: '0 0 3px', color: 'var(--text)' }}>
+            <h3 style={{ fontFamily: "'Montserrat', 'Segoe UI', sans-serif", fontSize: 'clamp(1.35rem, 4vw, 1.625rem)', letterSpacing: '-0.01em', margin: '0 0 3px', color: 'var(--text)' }}>
               {uc.retailer}
             </h3>
             <div style={{ fontSize: '0.8125rem', color: 'var(--muted)' }}>{uc.type} · {uc.location}</div>
@@ -247,6 +247,23 @@ function UseCasePanel({ uc }) {
 export default function UseCasesSection() {
   const [active, setActive] = useState('tehzeeb')
   const current = USE_CASES.find(u => u.id === active)
+  const ids = USE_CASES.map(u => u.id)
+
+  // Keyboard support for the horizontal tab strip
+  const onTabKeyDown = (e, id) => {
+    const i = ids.indexOf(id)
+    let next = null
+    if (e.key === 'ArrowRight') next = ids[(i + 1) % ids.length]
+    else if (e.key === 'ArrowLeft') next = ids[(i - 1 + ids.length) % ids.length]
+    else if (e.key === 'Home') next = ids[0]
+    else if (e.key === 'End') next = ids[ids.length - 1]
+    if (next) {
+      e.preventDefault()
+      setActive(next)
+      const el = document.getElementById(`tab-${next}`)
+      el?.focus()
+    }
+  }
 
   return (
     <section id="use-cases" className="section" style={{ background: 'var(--hero-surface)' }}>
@@ -277,6 +294,8 @@ export default function UseCasesSection() {
               aria-controls={`panel-${uc.id}`}
               id={`tab-${uc.id}`}
               onClick={() => setActive(uc.id)}
+              onKeyDown={(e) => onTabKeyDown(e, uc.id)}
+              tabIndex={active === uc.id ? 0 : -1}
               className="snap-start tap-target"
               style={{
                 flexShrink: 0,

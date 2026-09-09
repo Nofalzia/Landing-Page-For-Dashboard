@@ -17,15 +17,22 @@ export default function MobileCTABar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.classList.toggle('has-mobile-cta', visible)
+    return () => document.body.classList.remove('has-mobile-cta')
+  }, [visible])
+
   return (
     <div
-      aria-hidden="true"
+      aria-hidden={!visible}
       className="mobile-cta-bar"
       style={{
         position: 'fixed',
         bottom: 0, left: 0, right: 0,
         zIndex: 200,
         transform: visible ? 'translateY(0)' : 'translateY(110%)',
+        visibility: visible ? 'visible' : 'hidden',
+        pointerEvents: visible ? 'auto' : 'none',
         transition: 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
       }}
     >

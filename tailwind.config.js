@@ -5,16 +5,16 @@ export default {
     extend: {
       colors: {
         brand: {
-          DEFAULT: '#1E362D',
-          hover: '#2A4A3C',
-          light: 'rgba(30,54,45,0.08)',
+          DEFAULT: '#234e45',
+          hover: '#183d36',
+          light: 'rgba(35,78,69,0.08)',
         },
         sage: '#7C9473',
         amber: '#B8863B',
         terra: '#BE6A4B',
       },
       fontFamily: {
-        display: ['"Instrument Serif"', 'Georgia', 'serif'],
+        display: ['"Roboto Slab"', 'Georgia', 'serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {

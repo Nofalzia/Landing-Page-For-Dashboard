@@ -37,6 +37,21 @@ export default function FeaturesSection() {
   const [active, setActive] = useState(0)
   const [openMobile, setOpenMobile] = useState(null)
 
+  // Keyboard support for the vertical feature list
+  const handleTabKey = (e, i) => {
+    let next = null
+    if (e.key === 'ArrowDown') next = (i + 1) % FEATURES.length
+    else if (e.key === 'ArrowUp') next = (i - 1 + FEATURES.length) % FEATURES.length
+    else if (e.key === 'Home') next = 0
+    else if (e.key === 'End') next = FEATURES.length - 1
+    if (next !== null) {
+      e.preventDefault()
+      setActive(next)
+      const el = document.getElementById(`ft-${next}`)
+      el?.focus()
+    }
+  }
+
   return (
     <section id="features" className="section" style={{ background: 'var(--bg)' }}>
       <div className="container">
@@ -58,11 +73,14 @@ export default function FeaturesSection() {
                 aria-controls={`fp-${i}`}
                 id={`ft-${i}`}
                 onClick={() => setActive(i)}
+                onKeyDown={(e) => handleTabKey(e, i)}
+                tabIndex={active === i ? 0 : -1}
+                className="feat-tab tap-target"
                 style={{
                   display: 'flex', width: '100%', textAlign: 'left',
                   alignItems: 'flex-start', gap: '1.25rem',
                   padding: '1.25rem', borderRadius: '12px', border: 'none',
-                  cursor: 'pointer', background: 'none', outline: 'none',
+                  cursor: 'pointer', background: 'none',
                   transition: 'background 0.2s',
                   ...(active === i
                     ? { background: 'var(--white)', boxShadow: '0 1px 6px rgba(0,0,0,0.07)', border: '1px solid var(--border)' }

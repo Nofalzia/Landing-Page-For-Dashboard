@@ -15,8 +15,11 @@ export default function ArchitectureSection() {
           <div>
             <div className="eyebrow reveal" style={{ marginBottom:'1rem' }}>Architecture</div>
             <h2 className="headline-section reveal reveal-delay-1" style={{ marginBottom:'1.25rem' }}>Built from<br/>the ground up.</h2>
-            <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'var(--muted)', lineHeight:1.7, marginBottom:'2rem' }}>
+            <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'var(--muted)', lineHeight:1.7, marginBottom:'0.75rem' }}>
               A standard three-tier web architecture — frontend, backend, and database — built entirely with open-source, industry-standard tools.
+            </p>
+            <p className="reveal reveal-delay-2" style={{ fontSize:'0.9375rem', color:'var(--muted)', lineHeight:1.6, marginBottom:'2rem' }}>
+              In everyday terms: your sales files go in at the top, the dashboard you are looking at runs in the middle, and a secure database stores everything at the bottom.
             </p>
             <div className="reveal reveal-delay-3" style={{ display:'flex', flexDirection:'column', gap:'14px', marginBottom:'2rem' }}>
               {LAYERS.map(l=>(

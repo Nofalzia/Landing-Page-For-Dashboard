@@ -39,7 +39,7 @@ export default function AnomalySection() {
             <div className="reveal" style={{ fontSize:'0.6875rem', fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'#7C9473', marginBottom:'1rem' }}>
               Anomaly Detection
             </div>
-            <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Arial Black', 'Segoe UI', sans-serif", fontSize:'clamp(1.875rem,8vw,2.5rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1rem' }}>
+            <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Montserrat', 'Segoe UI', sans-serif", fontSize:'clamp(1.875rem,8vw,2.5rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1rem' }}>
               Spot what deserves your attention.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize:'0.9375rem', color:'rgba(255,255,255,0.65)', lineHeight:1.7 }}>
@@ -122,7 +122,7 @@ function AnomalyCopy({ alerts }) {
   return (
     <div>
       <div className="reveal" style={{ fontSize:'0.6875rem', fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'#7C9473', marginBottom:'1.25rem' }}>Anomaly Detection</div>
-      <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Arial Black', 'Segoe UI', sans-serif", fontSize:'clamp(2rem,3.5vw,3rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1.25rem' }}>
+      <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Montserrat', 'Segoe UI', sans-serif", fontSize:'clamp(2rem,3.5vw,3rem)', lineHeight:1.1, letterSpacing:'-0.015em', color:'#fff', marginBottom:'1.25rem' }}>
         Spot what deserves<br/>your attention.
       </h2>
       <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'rgba(255,255,255,0.65)', lineHeight:1.7, marginBottom:'2rem', maxWidth:'400px' }}>

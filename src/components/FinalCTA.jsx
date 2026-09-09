@@ -32,7 +32,7 @@ export default function FinalCTA() {
 
           <div style={{ position:'relative', zIndex:1, maxWidth:'580px', margin:'0 auto' }}>
             <div className="eyebrow reveal" style={{ marginBottom:'1.25rem' }}>Get Started</div>
-            <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Arial Black', 'Segoe UI', sans-serif", fontSize:'clamp(2rem,5vw,3.5rem)', lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--text)', marginBottom:'1.25rem' }}>
+            <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Montserrat', 'Segoe UI', sans-serif", fontSize:'clamp(2rem,5vw,3.5rem)', lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--text)', marginBottom:'1.25rem' }}>
               Stop reacting too late to retail problems.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'var(--muted)', lineHeight:1.65, marginBottom:'2.5rem' }}>

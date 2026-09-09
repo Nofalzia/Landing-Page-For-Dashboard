@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@400;500;700;800;900&display=swap');
+/* Fonts are loaded once via <link> in index.html — keep a single source of truth. */
 
 @tailwind base;
 @tailwind components;
@@ -21,6 +21,7 @@
   --green:         #234e45;
   --green-hover:   #183d36;
   --green-light:   rgba(35,78,69,0.10);
+  --green-dark:    #1E362D;
   --sage:          #6d8a90;
   --amber:         #9aa7ad;
   --terra:         #b89096;
@@ -87,11 +88,13 @@ body {
   color: var(--text);
   text-transform: none;
   max-width: none;
+  margin-top: 1.25rem; /* breathing room below the hero eyebrow */
+  text-wrap: balance; /* even, cross-machine line breaks in the hero headline */
 }
 
 /* H2 — stronger, more structured but less generic */
 .headline-section {
-  font-family: 'Arial Black', 'Segoe UI', sans-serif;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
   font-size: clamp(2.1rem, 3.2vw, 3rem);
   line-height: 0.96;
   letter-spacing: -0.06em;
@@ -155,11 +158,20 @@ body {
 .section-sm { padding: 4rem 0; }
 .container  { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
+/* Anchor targets must clear the fixed navbar */
+section[id] { scroll-margin-top: 5rem; }
+
 /* ── Feature number ────────────────────────────────────── */
 .feat-num {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.6875rem; font-weight: 700;
   color: var(--muted); letter-spacing: 0.06em;
+}
+
+/* Visible keyboard focus for the interactive feature list */
+.feat-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* ── Badge ─────────────────────────────────────────────── */
@@ -227,7 +239,7 @@ body {
   .section    { padding: 4rem 0; }
   .container  { padding: 0 1rem; }
   .mobile-cta-bar { display: block; }
-  main { padding-bottom: 80px; }
+  body.has-mobile-cta main { padding-bottom: 80px; }
 
   .headline-hero {
     font-size: clamp(2.25rem, 9vw, 3rem);

@@ -180,12 +180,12 @@ export default function Hero() {
           <div className="hero-copy reveal reveal-delay-1">
             <div className="eyebrow">Retail Analytics</div>
             <h1 className="headline-hero reveal reveal-delay-2">
-              <br /><br />See retail risks<br className="hero-br" />
+              See retail risks<br className="hero-br" />
               {' '}before it affects<br className="hero-br" />
               {' '}revenue.
             </h1>
             <p className="hero-subtitle reveal reveal-delay-3">
-              <br />Track your sales, stock, and performance without the friction of spreadsheets or guesswork.<br />
+              Track your sales, stock, and performance without the friction of spreadsheets or guesswork.
             </p>
 
             <div className="hero-pills reveal reveal-delay-3">
@@ -603,8 +603,8 @@ export default function Hero() {
           }
 
           .headline-hero {
-            max-width: 12ch;
-            margin: 0 auto 0.7rem;
+            max-width: 16ch;
+            margin: 1.5rem auto 0.75rem;
             font-size: clamp(2.5rem, 9vw, 3.1rem);
             line-height: 0.92;
             letter-spacing: -0.05em;
@@ -641,7 +641,7 @@ export default function Hero() {
             text-align: center;
             max-width: 100%;
             width: 100%;
-            margin: 0 auto 0.6rem;
+            margin: 1.25rem auto 0.6rem;
             font-size: clamp(2.6rem, 12vw, 3.7rem);
             line-height: 0.9;
             letter-spacing: -0.05em;
@@ -652,7 +652,7 @@ export default function Hero() {
             line-height: 1.5;
             max-width: none;
             width: 100%;
-            margin: 0 auto 0.9rem;
+            margin: 1.15rem auto 0.9rem;
           }
 
           .hero-pills {
@@ -682,6 +682,7 @@ export default function Hero() {
           .cta-group {
             flex-direction: column;
             gap: 0.7rem;
+            margin-top: 1rem;
           }
 
           .cta-group .btn-primary,

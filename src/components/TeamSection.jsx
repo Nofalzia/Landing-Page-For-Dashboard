@@ -196,9 +196,9 @@ function LinkedinIcon({ size = 16 }) {
 function UniversityIcon() {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M14 3L3 9l11 6 11-6-11-6z" stroke="#1E362D" strokeWidth="1.5" strokeLinejoin="round"/>
-      <path d="M3 9v9M25 9v4" stroke="#1E362D" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M7 11v7a7 7 0 0 0 14 0v-7" stroke="#1E362D" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M14 3L3 9l11 6 11-6-11-6z" stroke="var(--green)" strokeWidth="1.5" strokeLinejoin="round"/>
+      <path d="M3 9v9M25 9v4" stroke="var(--green)" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M7 11v7a7 7 0 0 0 14 0v-7" stroke="var(--green)" strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
   )
 }
