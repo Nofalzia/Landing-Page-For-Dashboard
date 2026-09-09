@@ -143,12 +143,14 @@ roundRectV(panel.x, panel.y, panel.w, panel.h, panel.r, PANEL_TOP, PANEL_BOT)
 const pxL = panel.x + 62            // inner left
 const pxR = panel.x + panel.w - 30  // inner right
 
-// Star brand mark (the Navbar logo, scaled 5x, top-left of the panel)
-const star = []
-const starPts = [[16,5],[17.6,13.4],[26,16],[17.6,18.6],[16,27],[14.4,18.6],[6,16],[14.4,13.4]]
-for (const [sx, sy] of starPts) star.push([205 + (sx - 16) * 5, 208 + (sy - 16) * 5])
-polygon(star, SAGE)
-// subtle companion pill beside the star
+// Brand mark (same motif as the Navbar logo): tile + rising trend + white spark
+roundRect(200, 205, 98, 98, 20, [36, 78, 66])
+const logoPts = [[223,290],[240,270],[256,276],[272,248],[288,252],[294,234]]
+polygon([[223,290],[240,270],[256,276],[272,248],[288,252],[294,234],[294,290]], [48, 92, 78])
+polyline(logoPts, 5, [185, 205, 190])
+const spark = [[289,222],[290.8,228.4],[296,231],[290.8,233.6],[289,240],[287.2,233.6],[282,231],[287.2,228.4]]
+polygon(spark, [244, 248, 240])
+// subtle companion pill beside the logo
 roundRect(360, 178, 168, 34, 17, LINE)
 
 // Chart: gridlines, area fill, line, then a terra anomaly drop

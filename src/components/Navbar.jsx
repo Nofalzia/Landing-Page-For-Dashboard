@@ -12,8 +12,16 @@ const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app'
 function StarLogo() {
   return (
     <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      {/* Rounded tile */}
       <rect width="32" height="32" rx="8" fill="var(--green)"/>
-      <path d="M16 5 L17.6 13.4 L26 16 L17.6 18.6 L16 27 L14.4 18.6 L6 16 L14.4 13.4 Z" fill="var(--sage)"/>
+      {/* Area under the curve */}
+      <path d="M5 23.5 L8.2 20.4 11.6 16.9 14.6 18.2 17.8 13.8 21 10.8 24.2 9.6 26.5 7 L26.5 23.5 Z" fill="rgba(255,255,255,0.10)"/>
+      {/* Rising trend line */}
+      <path d="M5 23.5 C6.6 21.4 8.6 17.6 11.6 16.9 C13 18.2 15.4 18.4 17.8 13.8 C19 12.4 22 11 26.5 7" fill="none" stroke="var(--sage)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Baseline */}
+      <line x1="5" y1="23.5" x2="26.5" y2="23.5" stroke="rgba(255,255,255,0.18)" strokeWidth="1.4" strokeLinecap="round"/>
+      {/* Insight spark at the peak */}
+      <path d="M26.5 2.9 L27.2 6.4 30.7 7.5 27.2 8.6 26.5 12.1 25.8 8.6 22.3 7.5 25.8 6.4 Z" fill="#fff"/>
     </svg>
   )
 }

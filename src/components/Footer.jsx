@@ -147,10 +147,16 @@ export default function Footer() {
 function RALogo() {
   return (
     <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      {/* Rounded tile */}
       <rect width="32" height="32" rx="8" fill="var(--green)"/>
-      <path d="M8 22V10h6a4 4 0 0 1 0 8h-2l4 4H13l-3.5-4H10v4H8z" fill="#fff"/>
-      <rect x="10" y="12" width="4" height="4" rx="1" fill="var(--sage)"/>
-      <path d="M18 10h2l4 12h-2l-1-3h-4l-1 3h-2l4-12zm1 3-1.5 4h3L19 13z" fill="#fff"/>
+      {/* Area under the curve */}
+      <path d="M5 23.5 L8.2 20.4 11.6 16.9 14.6 18.2 17.8 13.8 21 10.8 24.2 9.6 26.5 7 L26.5 23.5 Z" fill="rgba(255,255,255,0.10)"/>
+      {/* Rising trend line */}
+      <path d="M5 23.5 C6.6 21.4 8.6 17.6 11.6 16.9 C13 18.2 15.4 18.4 17.8 13.8 C19 12.4 22 11 26.5 7" fill="none" stroke="var(--sage)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Baseline */}
+      <line x1="5" y1="23.5" x2="26.5" y2="23.5" stroke="rgba(255,255,255,0.18)" strokeWidth="1.4" strokeLinecap="round"/>
+      {/* Insight spark at the peak */}
+      <path d="M26.5 2.9 L27.2 6.4 30.7 7.5 27.2 8.6 26.5 12.1 25.8 8.6 22.3 7.5 25.8 6.4 Z" fill="#fff"/>
     </svg>
   )
 }
