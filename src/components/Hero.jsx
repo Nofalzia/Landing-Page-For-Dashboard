@@ -199,10 +199,6 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="cta-group reveal reveal-delay-4">
-              <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">See the dashboard</a>
-              <a href="#use-cases" className="btn-secondary">View use cases</a>
-            </div>
           </div>
 
           <div className="hero-visual reveal reveal-delay-2" aria-label="Retail analytics dashboard preview">
@@ -256,6 +252,11 @@ export default function Hero() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="cta-group reveal reveal-delay-4">
+            <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">See the dashboard</a>
+            <a href="#use-cases" className="btn-secondary">View use cases</a>
           </div>
         </div>
       </div>
@@ -626,10 +627,11 @@ export default function Hero() {
             max-width: 100%;
           }
 
-          .hero-visual {
+          .hero-shell .hero-visual {
             display: flex;
             justify-content: center;
-            margin-top: 0.6rem;
+            margin-top: -1.9rem;
+            margin-bottom: 2.2rem;
           }
 
           .eyebrow {
@@ -652,7 +654,7 @@ export default function Hero() {
             line-height: 1.5;
             max-width: none;
             width: 100%;
-            margin: 1.15rem auto 0.9rem;
+            margin: 1.15rem auto 0.55rem;
           }
 
           .hero-pills {
@@ -677,6 +679,24 @@ export default function Hero() {
           .pill-icon {
             width: 1.1rem;
             height: 1.1rem;
+          }
+
+          .hero-shell {
+            display: block;
+          }
+
+          .hero-copy,
+          .hero-visual,
+          .cta-group {
+            width: 100%;
+          }
+
+          .hero-copy {
+            order: 0;
+          }
+
+          .hero-visual {
+            margin-top: 0.9rem;
           }
 
           .cta-group {
