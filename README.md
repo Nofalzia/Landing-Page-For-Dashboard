@@ -33,7 +33,7 @@ Or connect the repo to Vercel and it auto-deploys on push.
 
 | Resource | URL |
 |---|---|
-| Live Dashboard | https://retail-analytics-saas.vercel.app |
+| Live Dashboard | https://retail-analytics-dashboard-sigma.vercel.app |
 | Dashboard GitHub | https://github.com/Nofalzia/Retail_Analytics_Dashboard |
 
 ## Structure

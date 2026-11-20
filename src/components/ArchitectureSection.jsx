@@ -1,5 +1,5 @@
 const LAYERS = [
-  { label:'Data Sources',  items:['CSV Files','Excel (.xlsx)'],         color:'#B8863B', icon:<DataIcon/>,   desc:'Your existing retail exports and reports' },
+  { label:'Data Sources',  items:['CSV','XLSX','XLS'],                  color:'#B8863B', icon:<DataIcon/>,   desc:'The sales and stock exports you already keep' },
   { label:'Presentation',  items:['React 19','Chart.js','Tailwind CSS'],color:'#7C9473', icon:<UIIcon/>,     desc:'Interactive dashboards, charts, and KPI visualizations' },
   { label:'Application',   items:['Node.js','Express.js'],              color:'#1E362D', icon:<ServerIcon/>, desc:'Data processing, business logic, and API layer' },
   { label:'Data Layer',    items:['SQL Database'],                      color:'#71717A', icon:<DBIcon/>,     desc:'Structured storage for sales and inventory data' },

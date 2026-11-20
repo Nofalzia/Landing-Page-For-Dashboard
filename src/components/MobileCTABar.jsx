@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
 
 export default function MobileCTABar() {
   const [visible, setVisible] = useState(false)
@@ -56,10 +56,10 @@ export default function MobileCTABar() {
           }} />
           <div>
             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text)', lineHeight: 1.2 }}>
-              Retail Analytics Dashboard
+              HisaabIQ
             </div>
             <div style={{ fontSize: '0.6875rem', color: 'var(--muted)' }}>
-              Live demo available
+              Live demo with sample data
             </div>
           </div>
         </div>

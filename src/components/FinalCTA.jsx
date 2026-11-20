@@ -1,4 +1,4 @@
-const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
 
 export default function FinalCTA() {
   return (
@@ -33,10 +33,10 @@ export default function FinalCTA() {
           <div style={{ position:'relative', zIndex:1, maxWidth:'580px', margin:'0 auto' }}>
             <div className="eyebrow reveal" style={{ marginBottom:'1.25rem' }}>Get Started</div>
             <h2 className="reveal reveal-delay-1" style={{ fontFamily:"'Montserrat', 'Segoe UI', sans-serif", fontSize:'clamp(2rem,5vw,3.5rem)', lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--text)', marginBottom:'1.25rem' }}>
-              Stop reacting too late to retail problems.
+              One upload. A clear week ahead.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'var(--muted)', lineHeight:1.65, marginBottom:'2.5rem' }}>
-              Explore the live dashboard with demo data, or upload your own CSV and Excel files to see how much clearer your decisions become.
+              Open the live demo with sample data, or upload your own CSV or Excel export and work through the same three questions.
             </p>
             <div className="reveal reveal-delay-3 cta-group" style={{ display:'flex', gap:'12px', justifyContent:'center', flexWrap:'wrap' }}>
               <a href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize:'0.9375rem', padding:'0.875rem 2rem' }}>

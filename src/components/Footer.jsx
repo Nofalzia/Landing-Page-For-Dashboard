@@ -1,4 +1,4 @@
-const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
 
 const NAV = {
   Product: [
@@ -40,12 +40,12 @@ export default function Footer() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
               <RALogo />
               <span style={{ fontSize: '0.9375rem', fontWeight: 600, color: '#fff' }}>
-                Retail Analytics
+                HisaabIQ
               </span>
             </div>
             <p style={{ fontSize: '0.875rem', lineHeight: 1.7, maxWidth: '260px', marginBottom: '1.5rem' }}>
-              A web-based retail analytics dashboard that turns CSV and Excel data
-              into actionable visual insights.
+              Upload your sales and stock exports, then see what happened, what is
+              at risk, and what to reorder.
             </p>
             <a
               href={DASHBOARD_URL}
@@ -60,7 +60,7 @@ export default function Footer() {
               onMouseEnter={e => e.currentTarget.style.color = 'var(--accent-strong)'}
               onMouseLeave={e => e.currentTarget.style.color = 'var(--sage)'}
             >
-              retail-analytics-saas.vercel.app →
+              retail-analytics-dashboard-sigma.vercel.app →
             </a>
           </div>
 

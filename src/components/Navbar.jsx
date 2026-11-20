@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: 'About',        href: '#about' },
 ]
 
-const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
 
 function StarLogo() {
   return (
@@ -64,7 +64,7 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="/"
-            aria-label="Retail Analytics — Home"
+            aria-label="HisaabIQ — Home"
             style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none', flexShrink: 0 }}
           >
             <StarLogo />
@@ -73,7 +73,7 @@ export default function Navbar() {
               fontSize: '0.9375rem', fontWeight: 700,
               color: 'var(--text)', letterSpacing: '-0.01em',
             }}>
-              Retail Analytics
+              HisaabIQ
             </span>
           </a>
 
@@ -161,7 +161,7 @@ export default function Navbar() {
           <a href="/" onClick={close} style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none' }}>
             <StarLogo />
             <span style={{ fontFamily: "'Montserrat',sans-serif", fontSize: '0.9375rem', fontWeight: 700, color: 'var(--text)' }}>
-              Retail Analytics
+              HisaabIQ
             </span>
           </a>
           <button

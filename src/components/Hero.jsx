@@ -1,4 +1,4 @@
-const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
 const TREND = [42,51,47,60,55,63,58,70,66,74,61,78,72,82,69,88,79,91,84,95,88,96]
 
 function miniPath(data, w, h) {
@@ -76,7 +76,7 @@ function DesktopMockup() {
       <div style={{ flex: 1, padding: '13px', minWidth: 0 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '11px' }}>
           <div>
-            <div style={{ fontSize: '8px', color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '2px' }}>Retail Analytics</div>
+            <div style={{ fontSize: '8px', color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '2px' }}>HisaabIQ</div>
             <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text)', fontFamily: "'Montserrat',sans-serif" }}>Overview</div>
           </div>
           <div style={{ fontSize: '8px', fontWeight: 600, background: 'var(--green-light)', color: 'var(--green)', padding: '3px 7px', borderRadius: '100px' }}>Business Owner</div>
@@ -121,7 +121,7 @@ function DesktopMockup() {
           <div style={{ fontSize: '7px', color: '#BE6A4B', fontWeight: 700 }}>7 unusual patterns detected</div>
         </div>
         <div style={{ marginTop: '7px', textAlign: 'center' }}>
-          <span style={{ fontSize: '6.5px', color: '#a1a1aa', letterSpacing: '0.04em' }}>DEMO DATA · retail-analytics-saas.vercel.app</span>
+          <span style={{ fontSize: '6.5px', color: '#a1a1aa', letterSpacing: '0.04em' }}>DEMO DATA · retail-analytics-dashboard-sigma.vercel.app</span>
         </div>
       </div>
     </div>
@@ -178,14 +178,14 @@ export default function Hero() {
       <div className="container">
         <div className="hero-shell reveal">
           <div className="hero-copy reveal reveal-delay-1">
-            <div className="eyebrow">Retail Analytics</div>
+            <div className="eyebrow">HisaabIQ</div>
             <h1 className="headline-hero reveal reveal-delay-2">
               See retail risks<br className="hero-br" />
-              {' '}before it affects<br className="hero-br" />
-              {' '}revenue.
+              {' '}before it<br className="hero-br" />
+              {' '}affects revenue.
             </h1>
             <p className="hero-subtitle reveal reveal-delay-3">
-              Track your sales, stock, and performance without the friction of spreadsheets or guesswork.
+              Upload your sales & stock exports. Get revenue, stockout risks & reorder suggestions without the friction of spreadsheets.
             </p>
 
             <div className="hero-pills reveal reveal-delay-3">
@@ -201,13 +201,13 @@ export default function Hero() {
 
           </div>
 
-          <div className="hero-visual reveal reveal-delay-2" aria-label="Retail analytics dashboard preview">
+          <div className="hero-visual reveal reveal-delay-2" aria-label="HisaabIQ dashboard preview">
             <div className="stacked-cards">
               <div className="dashboard-card dashboard-card-back" />
               <div className="dashboard-card dashboard-card-mid" />
               <div className="dashboard-card dashboard-card-front">
                 <div className="dashboard-topbar">
-                  <span>Retail Analytics</span>
+                  <span>HisaabIQ</span>
                   <span className="badge-soft">Owner View</span>
                 </div>
 
@@ -255,7 +255,7 @@ export default function Hero() {
           </div>
 
           <div className="cta-group reveal reveal-delay-4">
-            <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">See the dashboard</a>
+            <a href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">See the dashboard</a>
             <a href="#use-cases" className="btn-secondary">View use cases</a>
           </div>
         </div>

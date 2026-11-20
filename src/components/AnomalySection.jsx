@@ -6,22 +6,34 @@ const ALERTS = [
 
 export default function AnomalySection() {
   const W = 320, H = 100
-  const normal = [50,52,51,53,50,52,51,54,51,52,50,51,52,50,51]
-  const full   = [...normal, 30, 28, 31]
+  const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
   const max = 60, min = 20
 
-  const toXY = (arr) => arr.map((v, i) => {
-    const x = ((i / (full.length - 1)) * W).toFixed(1)
+  // Green "normal range" line: one point per day, drawn across the full chart.
+  const normal = [52, 51, 53, 52, 51, 52, 52]
+
+  const toXY = (v, i) => {
+    // Days sit in equal slots, so the value points line up exactly with the
+    // centred "Mon … Sun" labels underneath the chart.
+    const x = (((i + 0.5) / DAYS.length) * W).toFixed(1)
     const y = (H - 10 - ((v - min) / (max - min)) * (H - 20)).toFixed(1)
     return `${x},${y}`
-  })
+  }
 
-  const normalXY = toXY(normal).join(' ')
-  const fullXY   = toXY(full).join(' ')
-  const areaXY   = `0,${H} ${fullXY} ${W},${H}`
-  const lastNormal = toXY([normal[normal.length-1]])[0]
-  const dropPoints = toXY([normal[normal.length-1], 30, 28, 31]).join(' ')
-  const anomalyDot = toXY([30])[0]
+  const points   = normal.map(toXY)
+  const normalXY = points.join(' ')
+  const firstX   = points[0].split(',')[0]
+  const lastX    = points[points.length - 1].split(',')[0]
+  const areaXY   = `${firstX},${H} ${normalXY} ${lastX},${H}`
+
+  // Orange anomaly: branches off the green line at Thu, bottoms out on Fri,
+  // then recovers slightly into Sat.
+  const anomaly = [null, null, null, 52, 30, 33, null]
+  const dropPoints = anomaly
+    .map((v, i) => (v === null ? null : toXY(v, i)))
+    .filter(Boolean)
+    .join(' ')
+  const anomalyDot = toXY(30, 4)
 
   return (
     <section id="anomaly" className="section" style={{ background: 'var(--green)' }} aria-label="Anomaly detection">
@@ -30,7 +42,7 @@ export default function AnomalySection() {
         {/* ── DESKTOP layout ──────────────────────────────── */}
         <div className="anomaly-desktop" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
           <AnomalyCopy alerts={ALERTS} />
-          <AnomalyChart W={W} H={H} areaXY={areaXY} normalXY={normalXY} dropPoints={dropPoints} anomalyDot={anomalyDot} />
+          <AnomalyChart W={W} H={H} areaXY={areaXY} normalXY={normalXY} dropPoints={dropPoints} anomalyDot={anomalyDot} days={DAYS} />
         </div>
 
         {/* ── MOBILE layout ───────────────────────────────── */}
@@ -43,8 +55,8 @@ export default function AnomalySection() {
               Spot what deserves your attention.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize:'0.9375rem', color:'rgba(255,255,255,0.65)', lineHeight:1.7 }}>
-              Flag unusual changes automatically so teams can act early.
-              No manual checking. Clear, explainable alerts when something deserves attention.
+              HisaabIQ compares each product against its own rolling average and flags the days that break the pattern.
+              No manual checking, and every alert can be explained in one sentence.
             </p>
           </div>
 
@@ -82,6 +94,7 @@ export default function AnomalySection() {
               <polyline points={normalXY} fill="none" stroke="#7C9473" strokeWidth="2.5" strokeLinejoin="round" className="chart-line"/>
               <polyline points={dropPoints} fill="none" stroke="#BE6A4B" strokeWidth="2.5" strokeLinejoin="round"/>
               <circle cx={anomalyDot.split(',')[0]} cy={anomalyDot.split(',')[1]} r="5" fill="#BE6A4B"/>
+              <circle cx={anomalyDot.split(',')[0]} cy={anomalyDot.split(',')[1]} r="9" fill="none" stroke="#BE6A4B" strokeWidth="1.5" strokeDasharray="3 2" className="chart-marker-ring"/>
             </svg>
           </div>
 
@@ -109,6 +122,14 @@ export default function AnomalySection() {
       <style>{`
         .anomaly-desktop { display: grid; }
         .anomaly-mobile  { display: none; }
+        @keyframes markerPulse {
+          0%, 100% { opacity: 1; }
+          50%      { opacity: 0.25; }
+        }
+        .chart-marker-ring { animation: markerPulse 2.4s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .chart-marker-ring { animation: none; }
+        }
         @media (max-width: 720px) {
           .anomaly-desktop { display: none !important; }
           .anomaly-mobile  { display: block !important; }
@@ -126,8 +147,8 @@ function AnomalyCopy({ alerts }) {
         Spot what deserves<br/>your attention.
       </h2>
       <p className="reveal reveal-delay-2" style={{ fontSize:'1rem', color:'rgba(255,255,255,0.65)', lineHeight:1.7, marginBottom:'2rem', maxWidth:'400px' }}>
-        No manager has time to catch every issue by hand.
-        The dashboard highlights unusual changes early so teams can act before they become bigger problems.
+        You cannot check every product by hand.
+        HisaabIQ compares each one against its own rolling average and flags the days that break the pattern.
       </p>
       <div className="reveal reveal-delay-3" style={{ display:'flex', flexDirection:'column', gap:'10px', marginBottom:'2rem' }}>
         {alerts.map(a => (
@@ -145,13 +166,13 @@ function AnomalyCopy({ alerts }) {
         ))}
       </div>
       <div className="reveal reveal-delay-4" style={{ fontSize:'0.75rem', color:'rgba(255,255,255,0.35)', borderTop:'1px solid rgba(255,255,255,0.1)', paddingTop:'1rem' }}>
-        Business-critical alerts that surface changes early, without needing deep technical knowledge to understand them.
+        Threshold checks and percentage deviation against rolling averages. Any alert can be explained in one sentence.
       </div>
     </div>
   )
 }
 
-function AnomalyChart({ W, H, areaXY, normalXY, dropPoints, anomalyDot }) {
+function AnomalyChart({ W, H, areaXY, normalXY, dropPoints, anomalyDot, days }) {
   const cx = anomalyDot.split(',')[0]
   const cy = anomalyDot.split(',')[1]
   return (
@@ -164,11 +185,11 @@ function AnomalyChart({ W, H, areaXY, normalXY, dropPoints, anomalyDot }) {
           <polygon points={areaXY} fill="url(#ag2)"/>
           <polyline points={normalXY} fill="none" stroke="#7C9473" strokeWidth="2.5" strokeLinejoin="round" className="chart-line"/>
           <polyline points={dropPoints} fill="none" stroke="#BE6A4B" strokeWidth="2.5" strokeLinejoin="round"/>
-          <circle cx={cx} cy={cy} r="5" fill="#BE6A4B"/>
-          <circle cx={cx} cy={cy} r="9" fill="none" stroke="#BE6A4B" strokeWidth="1.5" strokeDasharray="3 2"/>
+          <circle cx={cx} cy={cy} r="4.5" fill="#BE6A4B"/>
+          <circle cx={cx} cy={cy} r="9" fill="none" stroke="#BE6A4B" strokeWidth="1.5" strokeDasharray="3 2" className="chart-marker-ring"/>
         </svg>
-        <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'1.25rem' }}>
-          {['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d=><span key={d} style={{ fontSize:'0.6875rem', color:'rgba(255,255,255,0.3)' }}>{d}</span>)}
+        <div style={{ display:'grid', gridTemplateColumns:`repeat(${days.length}, 1fr)`, marginBottom:'1.25rem' }}>
+          {days.map(d=><span key={d} style={{ fontSize:'0.6875rem', textAlign:'center', color:'rgba(255,255,255,0.3)' }}>{d}</span>)}
         </div>
         <div style={{ display:'flex', gap:'1.25rem', marginBottom:'1.5rem' }}>
           {[{c:'#7C9473',l:'Normal range'},{c:'#BE6A4B',l:'Anomaly detected'}].map(l=>(

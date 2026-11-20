@@ -1,9 +1,9 @@
 const STEPS = [
-  { n:'01', title:'Upload',    body:'Bring in your existing sales and inventory exports. CSV and Excel files work straight away — no reformatting required.', icon:<UploadIcon/> },
-  { n:'02', title:'Process',   body:'The system reads your file, structures the data, and stores it cleanly — ready for analysis.', icon:<ProcessIcon/> },
-  { n:'03', title:'Analyze',   body:'Key metrics are calculated automatically: revenue totals, product rankings, trends, and statistical anomaly checks.', icon:<AnalyzeIcon/> },
-  { n:'04', title:'Visualize', body:'Your data becomes interactive charts, KPI cards, and inventory tables you can explore and filter in real time.', icon:<VisualizeIcon/> },
-  { n:'05', title:'Act',       body:'Walk into your week knowing what is performing, what needs attention, and what deserves a closer look.', icon:<ActIcon/> },
+  { n:'01', title:'Upload',    body:'Upload your sales export or stock count. CSV, XLSX and XLS all work, and templates are there if you need one.', icon:<UploadIcon/> },
+  { n:'02', title:'Check',     body:'We read the header row to identify the file, match column names like "Sale Date" or "Day", and log any bad rows.', icon:<ProcessIcon/> },
+  { n:'03', title:'Analyze',   body:'Analysis runs automatically after every upload: detection first, then reorder recommendations, with the counts shown.', icon:<AnalyzeIcon/> },
+  { n:'04', title:'Review',    body:'You get anomaly alerts, stockouts ranked by urgency, and reorder suggestions with the revenue at risk.', icon:<VisualizeIcon/> },
+  { n:'05', title:'Act',       body:'Acknowledge or complete each suggestion, then test a cost or price change in the scenario simulator.', icon:<ActIcon/> },
 ]
 
 export default function HowItWorksSection() {
@@ -20,10 +20,10 @@ export default function HowItWorksSection() {
               From spreadsheet to action in five steps.
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize: '1rem', color: 'var(--muted)', lineHeight: 1.65, marginBottom: '2rem' }}>
-              Upload what you already use, turn it into a clear view of performance, and act before small issues become margin problems.
+              Upload the file you already export. HisaabIQ checks the data, runs the analysis, and points you to what needs attention.
             </p>
             <div className="reveal reveal-delay-3">
-              <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 View the dashboard →
               </a>
             </div>
@@ -111,7 +111,7 @@ export default function HowItWorksSection() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '1.75rem' }}>
-            <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center' }}>
+            <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center' }}>
               View the dashboard →
             </a>
           </div>

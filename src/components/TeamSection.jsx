@@ -1,7 +1,6 @@
 const TEAM = [
   {
     name: 'Mohammad Nofal Zia',
-    role: 'Frontend & Full-Stack Development',
     id: '01-134231-040',
     github: 'https://github.com/Nofalzia',
     linkedin: 'https://linkedin.com/in/nofal-zia',
@@ -10,14 +9,18 @@ const TEAM = [
   },
   {
     name: 'Azlan Shah',
-    role: 'Backend & Database Development',
     id: '01-134231-017',
-    github: null,
-    linkedin: null,
+    github: 'https://github.com/AzlanShah',
+    linkedin: 'https://www.linkedin.com/in/azlanshah-cs/',
     initials: 'AS',
     color: '#7C9473',
   },
 ]
+
+const SUPERVISOR = {
+  name: 'Ms. Ameena Saaed',
+  linkedin: 'https://www.linkedin.com/in/ameena-saaed/',
+}
 
 export default function TeamSection() {
   return (
@@ -65,11 +68,8 @@ export default function TeamSection() {
                 </span>
               </div>
 
-              <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>
+              <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text)', marginBottom: '6px' }}>
                 {member.name}
-              </div>
-              <div style={{ fontSize: '0.8125rem', color: 'var(--muted)', marginBottom: '6px' }}>
-                {member.role}
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--muted)', fontFamily: 'monospace', marginBottom: '1.25rem' }}>
                 {member.id}
@@ -77,45 +77,9 @@ export default function TeamSection() {
 
               {/* Links */}
               {(member.github || member.linkedin) && (
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  {member.github && (
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} on GitHub`}
-                      style={{
-                        display: 'flex', alignItems: 'center', gap: '6px',
-                        fontSize: '0.75rem', fontWeight: 600, color: 'var(--muted)',
-                        textDecoration: 'none', padding: '5px 10px',
-                        border: '1px solid var(--border)', borderRadius: '100px',
-                        transition: 'color 0.2s, border-color 0.2s',
-                      }}
-                      onMouseEnter={e => { e.currentTarget.style.color = 'var(--text)'; e.currentTarget.style.borderColor = 'var(--border-strong)' }}
-                      onMouseLeave={e => { e.currentTarget.style.color = 'var(--muted)'; e.currentTarget.style.borderColor = 'var(--border)' }}
-                    >
-                      <GithubIcon size={13} /> GitHub
-                    </a>
-                  )}
-                  {member.linkedin && (
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} on LinkedIn`}
-                      style={{
-                        display: 'flex', alignItems: 'center', gap: '6px',
-                        fontSize: '0.75rem', fontWeight: 600, color: 'var(--muted)',
-                        textDecoration: 'none', padding: '5px 10px',
-                        border: '1px solid var(--border)', borderRadius: '100px',
-                        transition: 'color 0.2s, border-color 0.2s',
-                      }}
-                      onMouseEnter={e => { e.currentTarget.style.color = 'var(--text)'; e.currentTarget.style.borderColor = 'var(--border-strong)' }}
-                      onMouseLeave={e => { e.currentTarget.style.color = 'var(--muted)'; e.currentTarget.style.borderColor = 'var(--border)' }}
-                    >
-                      <LinkedinIcon size={13} /> LinkedIn
-                    </a>
-                  )}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                  {member.github && <ProfilePill kind="github" href={member.github} name={member.name} />}
+                  {member.linkedin && <ProfilePill kind="linkedin" href={member.linkedin} name={member.name} />}
                 </div>
               )}
             </div>
@@ -159,10 +123,15 @@ export default function TeamSection() {
           </div>
 
           <div style={{ borderLeft: '1px solid var(--border)', paddingLeft: '2rem' }} className="supervisor-divider">
-            <div style={{ fontSize: '0.6875rem', fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '4px' }}>
+            <div style={{ fontSize: '0.6875rem', fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>
               Supervisor
             </div>
-            <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text)' }}>Ms. Ameena Saaed</div>
+            <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text)', marginBottom: SUPERVISOR.linkedin ? '12px' : 0 }}>
+              {SUPERVISOR.name}
+            </div>
+            {SUPERVISOR.linkedin && (
+              <ProfilePill kind="linkedin" href={SUPERVISOR.linkedin} name={SUPERVISOR.name} />
+            )}
           </div>
         </div>
       </div>
@@ -174,6 +143,30 @@ export default function TeamSection() {
         }
       `}</style>
     </section>
+  )
+}
+
+function ProfilePill({ kind, href, name }) {
+  const Icon = kind === 'github' ? GithubIcon : LinkedinIcon
+  const label = kind === 'github' ? 'GitHub' : 'LinkedIn'
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${name} on ${label}`}
+      style={{
+        display: 'inline-flex', alignItems: 'center', gap: '6px',
+        fontSize: '0.75rem', fontWeight: 600, color: 'var(--muted)',
+        textDecoration: 'none', padding: '5px 10px',
+        border: '1px solid var(--border)', borderRadius: '100px',
+        transition: 'color 0.2s, border-color 0.2s',
+      }}
+      onMouseEnter={e => { e.currentTarget.style.color = 'var(--text)'; e.currentTarget.style.borderColor = 'var(--border-strong)' }}
+      onMouseLeave={e => { e.currentTarget.style.color = 'var(--muted)'; e.currentTarget.style.borderColor = 'var(--border)' }}
+    >
+      <Icon size={13} /> {label}
+    </a>
   )
 }
 

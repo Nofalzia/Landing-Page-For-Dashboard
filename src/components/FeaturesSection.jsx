@@ -2,33 +2,33 @@ import { useState } from 'react'
 
 const FEATURES = [
   {
-    n: '01', title: 'Sales visibility',
-    body: 'See daily, weekly, and monthly movement in one place. Understand what is driving growth and where performance is slipping.',
+    n: '01', title: 'What is happening',
+    body: 'Revenue, order counts, your recent sales trend and your top products in one place — the plain answer to how the week went.',
     visual: <SalesViz />,
   },
   {
     n: '02', title: 'Product performance',
-    body: 'Spot which products are earning the most and which are quietly dragging down profit. Focus attention on the lines that matter.',
+    body: 'See which products earn the most and which are quietly slipping, so attention goes to the lines that matter.',
     visual: <ProductViz />,
   },
   {
-    n: '03', title: 'Inventory control',
-    body: 'Know what is on hand, what is moving quickly, and what is at risk of running out before it affects sales.',
+    n: '03', title: 'Stockout watch',
+    body: 'Every product ranked by days of cover against recent selling speed, so you know which shelf runs empty first.',
     visual: <InventoryViz />,
   },
   {
     n: '04', title: 'Smart anomaly alerts',
-    body: 'Flag unusual spikes, dips, and stock issues automatically so teams can react early instead of discovering problems too late.',
+    body: 'Rule-based checks flag unusual drops and spikes per product, and every alert can be explained in one sentence.',
     visual: <AnomalyViz />,
   },
   {
-    n: '05', title: 'Manager-ready views',
-    body: 'Give owners the big picture and store teams the detail they need. Everyone gets a view built for the decisions they actually make.',
+    n: '05', title: 'Roles and reorder list',
+    body: 'Owner, manager and cashier views, plus reorder suggestions with a suggested quantity and revenue at risk you can acknowledge and complete.',
     visual: <RolesViz />,
   },
   {
-    n: '06', title: 'CSV + Excel import',
-    body: 'Upload the files you already use. No reformatting, no new system, and no technical setup required to get started.',
+    n: '06', title: 'CSV, XLSX and XLS import',
+    body: 'Upload the export you already have. Column names are matched for you, bad rows are logged, and the same file cannot be imported twice.',
     visual: <ImportViz />,
   },
 ]
@@ -58,7 +58,7 @@ export default function FeaturesSection() {
         <div style={{ marginBottom: '3rem' }}>
           <div className="eyebrow reveal" style={{ marginBottom: '1rem' }}>Features</div>
           <h2 className="headline-section reveal reveal-delay-1">
-            Everything you need<br/>to understand performance.
+            Three questions,<br/>answered every week.
           </h2>
         </div>
 
@@ -267,7 +267,7 @@ function AnomalyViz() {
           <span style={{ fontSize:'0.6875rem', fontWeight:700, color:'#BE6A4B', textTransform:'uppercase', letterSpacing:'0.06em' }}>Anomaly Detected</span>
         </div>
         <div style={{ fontSize:'0.9375rem', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>Pastry sales dropped −38%</div>
-        <div style={{ fontSize:'0.8125rem', color:'var(--muted)' }}>Thursday–Friday vs. 4-week average</div>
+        <div style={{ fontSize:'0.8125rem', color:'var(--muted)' }}>Friday vs. 4-week average</div>
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px' }}>
         {[{ l:'Threshold check', v:'±25%' },{ l:'Rolling window', v:'4 weeks' },{ l:'Confidence', v:'High' },{ l:'Action', v:'Review' }].map(s=>(

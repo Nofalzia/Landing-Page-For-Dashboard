@@ -18,7 +18,7 @@ const USE_CASES = [
       { name: 'Butter Croissant',     pct: 42, value: 'Rs. 1.48M' },
       { name: 'Cream Roll',           pct: 28, value: 'Rs. 0.98M' },
     ],
-    anomaly: { title: 'Pastry sales dropped −38%', body: 'Thursday–Friday vs. 4-week average.' },
+    anomaly: { title: 'Pastry sales dropped −38%', body: 'Friday vs. 4-week average.' },
     chartData: [55,62,58,71,66,78,70,83,76,89,72,92,80,95,74,98,84,97,88,100],
     accent: '#B8863B',
   },
@@ -206,7 +206,7 @@ function UseCasePanel({ uc }) {
             <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>{uc.anomaly.title}</div>
             <div style={{ fontSize: '0.8125rem', color: 'var(--muted)' }}>{uc.anomaly.body}</div>
           </div>
-          <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', padding: '10px', borderRadius: '10px', background: 'var(--green-light)', color: 'var(--green)', fontSize: '0.8125rem', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(30,54,45,0.15)' }}>
+          <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', padding: '10px', borderRadius: '10px', background: 'var(--green-light)', color: 'var(--green)', fontSize: '0.8125rem', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(30,54,45,0.15)' }}>
             Try with your own data →
           </a>
         </div>
@@ -236,7 +236,7 @@ function UseCasePanel({ uc }) {
           <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>{uc.anomaly.title}</div>
           <div style={{ fontSize: '0.8125rem', color: 'var(--muted)' }}>{uc.anomaly.body}</div>
         </div>
-        <a href="https://retail-analytics-saas.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center', fontSize: '0.9375rem' }}>
+        <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center', fontSize: '0.9375rem' }}>
           Try with your own data →
         </a>
       </div>
@@ -274,8 +274,8 @@ export default function UseCasesSection() {
             One platform.<br/>Every kind of retailer.
           </h2>
           <p className="reveal reveal-delay-2" style={{ fontSize: '1rem', color: 'var(--muted)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.65 }}>
-            The same dashboard adapts to a bakery chain, a wholesale supermarket,
-            or a department store — because the analytics problem is universal.
+            A bakery chain, a wholesale supermarket, a department store — the same
+            three questions about sales, stock and what to reorder.
           </p>
         </div>
 
