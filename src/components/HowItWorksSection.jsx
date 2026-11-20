@@ -23,7 +23,7 @@ export default function HowItWorksSection() {
               Upload the file you already export. HisaabIQ checks the data, runs the analysis, and points you to what needs attention.
             </p>
             <div className="reveal reveal-delay-3">
-              <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href="https://retail-analytics-saas.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 View the dashboard →
               </a>
             </div>
@@ -111,7 +111,7 @@ export default function HowItWorksSection() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '1.75rem' }}>
-            <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center' }}>
+            <a href="https://retail-analytics-saas.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center' }}>
               View the dashboard →
             </a>
           </div>

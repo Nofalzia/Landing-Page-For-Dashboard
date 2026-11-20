@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app/'
 
 export default function MobileCTABar() {
   const [visible, setVisible] = useState(false)

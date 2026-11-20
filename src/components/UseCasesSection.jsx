@@ -206,7 +206,7 @@ function UseCasePanel({ uc }) {
             <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>{uc.anomaly.title}</div>
             <div style={{ fontSize: '0.8125rem', color: 'var(--muted)' }}>{uc.anomaly.body}</div>
           </div>
-          <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', padding: '10px', borderRadius: '10px', background: 'var(--green-light)', color: 'var(--green)', fontSize: '0.8125rem', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(30,54,45,0.15)' }}>
+          <a href="https://retail-analytics-saas.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', padding: '10px', borderRadius: '10px', background: 'var(--green-light)', color: 'var(--green)', fontSize: '0.8125rem', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(30,54,45,0.15)' }}>
             Try with your own data →
           </a>
         </div>
@@ -236,7 +236,7 @@ function UseCasePanel({ uc }) {
           <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>{uc.anomaly.title}</div>
           <div style={{ fontSize: '0.8125rem', color: 'var(--muted)' }}>{uc.anomaly.body}</div>
         </div>
-        <a href="https://retail-analytics-dashboard-sigma.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center', fontSize: '0.9375rem' }}>
+        <a href="https://retail-analytics-saas.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ justifyContent: 'center', fontSize: '0.9375rem' }}>
           Try with your own data →
         </a>
       </div>

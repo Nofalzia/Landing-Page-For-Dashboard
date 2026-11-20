@@ -1,4 +1,4 @@
-const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app/'
 const TREND = [42,51,47,60,55,63,58,70,66,74,61,78,72,82,69,88,79,91,84,95,88,96]
 
 function miniPath(data, w, h) {

@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: 'About',        href: '#about' },
 ]
 
-const DASHBOARD_URL = 'https://retail-analytics-dashboard-sigma.vercel.app'
+const DASHBOARD_URL = 'https://retail-analytics-saas.vercel.app/'
 
 function StarLogo() {
   return (
